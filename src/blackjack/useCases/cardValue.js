@@ -1,8 +1,8 @@
 
 /**
- * 
+ * Asign a value to the card
  * @param {String} card 
- * @returns {Number} Asign a value to the card
+ * @returns {Number} Card value
  */
   const cardValue = ( card ) => {
     let value = card.substring(0, card.length - 1);

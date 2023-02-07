@@ -1,10 +1,11 @@
 /**
  * this function pick a card
- * @returns {String} return a card
+ * @param {Array<String>} deck Must be a string array
+ * @returns {String} Return a card
  */
 
 const pickCard = (deck) => {
-    if (deck.length === 0) {
+    if (!deck || deck.length === 0) {
         throw 'No hay cartas en la baraja'
     };
     return deck.shift();
