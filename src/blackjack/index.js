@@ -1,6 +1,7 @@
-import _ from 'underscore'                          // Acá se hace el import de la librería 'underscore' y se la renombra con un '_' para poder traer la librería entera y no solo algunas funciones
-import { createDeck } from './useCases/createDeck'  // Podemos crear un alias para llamar la funcon por otro nombre '{ createDeck as createNuevoDeck'
-import { pickCard } from './useCases/pickCard'
+import _ from 'underscore';                          // Acá se hace el import de la librería 'underscore' y se la renombra con un '_' para poder traer la librería entera y no solo algunas funciones
+import { createDeck } from './useCases/createDeck';  // Podemos crear un alias para llamar la funcon por otro nombre '{ createDeck as createNuevoDeck'
+import { pickCard } from './useCases/pickCard';
+import { cardValue } from './useCases/cardValue';
 
 (() => {                      // Esto se llama "patrón módulo" y permite que desde la consola del browser no se pueda acceder a las variables
   'use strict'                // Esto le dice a js que sea estricto a la hora de evaluar el código (yo podría declarar numeros = [1, 2, 3] sin let, var o const y js lo tomaría igual, pero en 'use strict' esto arroja error)
@@ -37,12 +38,6 @@ import { pickCard } from './useCases/pickCard'
   };
 
 
-  // Asign a value to the card
-  const cardValue = ( card ) => {
-      let value = card.substring(0, card.length - 1);
-      isNaN(value) ? value = (value === 'A') ? 11 : 10 : value = +value;
-      return value;
-  }
 
 
   // Turn: 0 = first player ... lastone = computer
