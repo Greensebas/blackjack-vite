@@ -1,6 +1,6 @@
 import _ from 'underscore'                          // Acá se hace el import de la librería 'underscore' y se la renombra con un '_' para poder traer la librería entera y no solo algunas funciones
 import { createDeck } from './useCases/createDeck'  // Podemos crear un alias para llamar la funcon por otro nombre '{ createDeck as createNuevoDeck'
-
+import { pickCard } from './useCases/pickCard'
 
 (() => {                      // Esto se llama "patrón módulo" y permite que desde la consola del browser no se pueda acceder a las variables
   'use strict'                // Esto le dice a js que sea estricto a la hora de evaluar el código (yo podría declarar numeros = [1, 2, 3] sin let, var o const y js lo tomaría igual, pero en 'use strict' esto arroja error)
@@ -35,18 +35,6 @@ import { createDeck } from './useCases/createDeck'  // Podemos crear un alias pa
       btnTakeCard.disabled = false;
       btnFinish.disabled = false;
   };
-
-
-
-  // this function pick a card
-
-  const pickCard = () => {
-      if (deck.length === 0) {
-          throw 'No hay cartas en la baraja'
-      };
-      return deck.shift();
-  };
-
 
 
   // Asign a value to the card
@@ -92,7 +80,7 @@ import { createDeck } from './useCases/createDeck'  // Podemos crear un alias pa
   const computerTime = ( minPoints ) => {
       let computerPoints = 0;
       do {
-          const card = pickCard();
+          const card = pickCard(deck);
           computerPoints = pointsCounter(card ,playersPointsDom.length - 1 );
 
           renderCard( card, playersPointsDom.length - 1);
@@ -109,7 +97,7 @@ import { createDeck } from './useCases/createDeck'  // Podemos crear un alias pa
   // EVENTS
 
   btnTakeCard.addEventListener('click', () => {
-      const card = pickCard(); 
+      const card = pickCard(deck); 
 
       const playerPoints = pointsCounter(card, 0);
 
