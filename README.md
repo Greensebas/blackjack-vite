@@ -18,10 +18,13 @@
 4. Abrir el proyecto en el: ```http://localhost:5173```
 
 ## PRODUCCIÓN EN NETLIFY
-1. Ejecutar ```npm run build```
-2. Tomar la carpeta ```dist``` y desplegarla 
+1. Revisar el archivo ```vite.config.js``` y comentar (//) la configuración ```base```
+2. Ejecutar ```npm run build```
+3. Tomar la carpeta ```dist``` y desplegarla en la configuración ```Deploys``` de Netlify (Drag and drop)
 
 ## PRODUCCIÓN EN GITHUB PAGES
-1. Ejecutar ```npm run build```
-2. Tomar la carpeta ```dist``` y renombrarla como ```docs```
-3. Hacer el push al repositorio
+1. Revisar el archivo ```vite.config.js``` y descomentar (//) la configuración ```base```
+2. Ejecutar ```npm run build```
+3. Tomar la carpeta ```dist``` y renombrarla como ```docs```
+4. Hacer el push al repositorio
+5. Aguardar la actualización del sitio
