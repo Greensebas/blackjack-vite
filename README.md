@@ -1,5 +1,10 @@
 # Blackjack
 
+## PRUÉBALO
+* https://greensebas.github.io/blackjack-vite/
+
+----
+
 * Se utiliza la librería "underscore" para ciertas funciones
 
 * Para ejecutar la app como desarrollador ingresar en consola 'npm run dev' e ingresar al link localhost
